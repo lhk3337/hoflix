@@ -29,4 +29,4 @@ Learning React and ES6 by building a Movie Discovery App.
 
 # Preview:
 
-Try it on [netlify]()
+Try it on [netlify](https://determined-wozniak-2b58dd.netlify.app/)
