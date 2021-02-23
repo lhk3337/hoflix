@@ -35,7 +35,7 @@
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build"
   },
-  "homepage": "https://lhk3337.github.io/hoflix",
+  "homepage": "https://determined-wozniak-2b58dd.netlify.app",
   "browserslist": [
     ">0.2%",
     "not dead",
