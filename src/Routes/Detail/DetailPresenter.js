@@ -110,6 +110,9 @@ const TableContainer = styled.div`
   height: 240px;
   display: flex;
   white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const SeasonContainer = styled.div`
@@ -117,11 +120,11 @@ const SeasonContainer = styled.div`
 `;
 
 const SeasonImg = styled.img`
-  width: 150px;
+  width: 130px;
   border-radius: 5px;
   margin-bottom: 5px;
   margin-right: 10px;
-  height: 200px;
+  height: 180px;
 `;
 
 const opts = {
