@@ -24,7 +24,7 @@ const Message = ({ text }) => (
     <Text>{text}</Text>
   </Container>
 );
-Message.proptypes = {
+Message.propTypes = {
   text: Proptypes.string.isRequired,
 };
 export default Message;
