@@ -140,15 +140,13 @@ const DetailPresenter = ({ result, error, loading }) =>
       <Loader />
     </>
   ) : error ? (
-    <Message />
+    <Message text={error} />
   ) : (
     <Container>
       <Helmet>
         <title>{result.title ? result.title : result.name} | hoflix</title>
       </Helmet>
-      <Backdrop
-        bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
-      />
+      <Backdrop bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`} />
       <Content>
         <Cover
           bgImage={
@@ -162,12 +160,10 @@ const DetailPresenter = ({ result, error, loading }) =>
           <ItemContainer>
             <Item>
               {result.release_date
-                ? result.release_date === undefined ||
-                  result.release_date === null
+                ? result.release_date === undefined || result.release_date === null
                   ? "Not Found Year"
                   : `${result.release_date.substring(0, 4)}년`
-                : result.first_air_date === null ||
-                  result.first_air_date === undefined
+                : result.first_air_date === null || result.first_air_date === undefined
                 ? "Not Found Year"
                 : `${result.first_air_date.substring(0, 4)}년`}
             </Item>
@@ -175,15 +171,11 @@ const DetailPresenter = ({ result, error, loading }) =>
             <Divider>•</Divider>
             <Item>
               {result.runtime
-                ? result.runtime === undefined ||
-                  result.runtime === null ||
-                  result.runtime === 0
+                ? result.runtime === undefined || result.runtime === null || result.runtime === 0
                   ? "Not Found Time"
                   : `${result.runtime}분`
-                : (result.episode_run_time &&
-                    result.episode_run_time[0] === undefined) ||
-                  (result.episode_run_time &&
-                    result.episode_run_time[0] === null)
+                : (result.episode_run_time && result.episode_run_time[0] === undefined) ||
+                  (result.episode_run_time && result.episode_run_time[0] === null)
                 ? "Not Found Time"
                 : `${result.episode_run_time && result.episode_run_time[0]}분`}
             </Item>
@@ -191,9 +183,7 @@ const DetailPresenter = ({ result, error, loading }) =>
             <Item>
               {result.genres &&
                 result.genres.map((genre, index) =>
-                  index === result.genres.length - 1
-                    ? genre.name
-                    : `${genre.name} / `
+                  index === result.genres.length - 1 ? genre.name : `${genre.name} / `
                 )}
             </Item>
             <Imdb>
@@ -208,10 +198,7 @@ const DetailPresenter = ({ result, error, loading }) =>
             {result.production_companies &&
               result.production_companies.map((logo) =>
                 logo.logo_path !== null ? (
-                  <ComponyLogoImg
-                    key={logo.id}
-                    src={`https://image.tmdb.org/t/p/original${logo.logo_path}`}
-                  />
+                  <ComponyLogoImg key={logo.id} src={`https://image.tmdb.org/t/p/original${logo.logo_path}`} />
                 ) : (
                   ""
                 )
@@ -220,9 +207,7 @@ const DetailPresenter = ({ result, error, loading }) =>
             <Item>
               {result.production_countries &&
                 result.production_countries.map((country, index) =>
-                  index === result.production_countries.length - 1
-                    ? country.name
-                    : `${country.name} / `
+                  index === result.production_countries.length - 1 ? country.name : `${country.name} / `
                 )}
             </Item>
           </ItemContainer>
